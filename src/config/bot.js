@@ -475,61 +475,6 @@ export const botConfig = {
     fun: true,
     music: true,
   },
-
-  const {
-    SlashCommandBuilder,
-    PermissionFlagsBits
-} = require('discord.js');
-
-module.exports = {
-    data: new SlashCommandBuilder()
-        .setName('staff')
-        .setDescription('Gives a role to a user.')
-        .addUserOption(option =>
-            option
-                .setName('user')
-                .setDescription('The user to give the role to.')
-                .setRequired(true))
-        .addRoleOption(option =>
-            option
-                .setName('role')
-                .setDescription('The role to give.')
-                .setRequired(true))
-        .setDefaultMemberPermissions(PermissionFlagsBits.ManageRoles),
-
-    async execute(interaction) {
-        const member = interaction.options.getMember('user');
-        const role = interaction.options.getRole('role');
-
-        if (!member) {
-            return interaction.reply({
-                content: 'That user is not in this server.',
-                ephemeral: true,
-            });
-        }
-
-        if (member.roles.cache.has(role.id)) {
-            return interaction.reply({
-                content: `${member.user.tag} already has that role.`,
-                ephemeral: true,
-            });
-        }
-
-        try {
-            await member.roles.add(role);
-
-            await interaction.reply({
-                content: `✅ Successfully gave **${role.name}** to ${member}.`,
-            });
-        } catch (error) {
-            console.error(error);
-
-            await interaction.reply({
-                content: '❌ Failed to give the role. Check my permissions and role hierarchy.',
-                ephemeral: true,
-            });
-        }
-    },
 };
 
 export function validateConfig(config) {
