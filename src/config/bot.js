@@ -24,8 +24,8 @@ export const botConfig = {
     activities: [
       {
         name: "Custom Status", // required by Discord API, not shown in the client
-        state: "stalking",     // this is what people actually see
-        type: 4,               // Custom
+        state: "Watching Collinsville RP",     // this is what people actually see
+        type: 3,               // Custom
       },
     ],
   },
@@ -93,8 +93,8 @@ export const botConfig = {
   embeds: {
     colors: {
       // Main brand colors.
-      primary: "#336699",
-      secondary: "#2F3136",
+      primary: "#03a9f6",
+      secondary: "#fefefe",
 
       // Standard status colors for success/error/warning/info messages.
       success: "#57F287",
@@ -214,10 +214,10 @@ export const botConfig = {
   // =========================
   tickets: {
     // Category ID where new tickets are created (null = no forced category).
-    defaultCategory: null,
+    defaultCategory: 1404667039573868675,
 
     // Role IDs allowed to manage/support tickets.
-    supportRoles: [],
+    supportRoles: [1404665210689556602],
 
     // Priority options users/staff can assign.
     priorities: {
@@ -249,13 +249,13 @@ export const botConfig = {
     },
 
     // Default priority for new tickets.
-    defaultPriority: "none",
+    defaultPriority: "low",
 
     // Category ID where closed tickets are archived.
     archiveCategory: null,
 
     // Channel ID where ticket logs are sent.
-    logChannel: null,
+    logChannel: 1404851155091062854,
   },
 
   // =========================
@@ -277,7 +277,7 @@ export const botConfig = {
     maximumDuration: 2592000000,
 
     // Role IDs allowed to host giveaways.
-    allowedRoles: [],
+    allowedRoles: [1404665210689556602],
 
     // Role IDs that bypass giveaway restrictions.
     bypassRoles: [],
@@ -313,7 +313,7 @@ export const botConfig = {
       // - "none"        = everyone is auto-verified immediately
       // - "account_age" = account must be older than set days
       // - "server_size" = auto-verify everyone only in smaller servers
-      defaultCriteria: "none",
+      defaultCriteria: "account_age",
 
       // Days used when `defaultCriteria` is `account_age`.
       defaultAccountAgeDays: 7,
@@ -378,7 +378,7 @@ export const botConfig = {
     defaultGoodbyeMessage:
       "{user} has left the server. We now have {memberCount} members.",
     // Channel ID for welcome messages.
-    defaultWelcomeChannel: null,
+    defaultWelcomeChannel: 1404639372141400086,
     // Channel ID for goodbye messages.
     defaultGoodbyeChannel: null,
   },
@@ -449,8 +449,8 @@ export const botConfig = {
   // Set any feature to `false` to disable it globally.
   features: {
     // Core systems.
-    economy: true,
-    leveling: true,
+    economy: false,
+    leveling: false,
     moderation: true,
     logging: true,
     welcome: true,
@@ -458,17 +458,17 @@ export const botConfig = {
     // Community engagement systems.
     tickets: true,
     giveaways: true,
-    birthday: true,
-    counter: true,
+    birthday: false,
+    counter: false,
 
     // Security and self-service systems.
     verification: true,
     reactionRoles: true,
-    joinToCreate: true,
+    joinToCreate: false,
 
     // Utility/quality-of-life modules.
-    voice: true,
-    search: true,
+    voice: false,
+    search: false,
     tools: true,
     utility: true,
     community: true,
